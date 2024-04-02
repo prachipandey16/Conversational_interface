@@ -4,7 +4,7 @@ from openai import OpenAI
 st.title("Seller ChatBox")
 
 def translate_text(text,target_lang):
-    client = OpenAI(st.secrets["API_KEY"])
+    client = OpenAI(api_key=st.secrets["API_KEY"])
     response = client.completions.create(
     model="gpt-3.5-turbo-instruct",
     prompt=f"Conver the following text into {target_lang} : {text}",
@@ -18,7 +18,7 @@ def translate_text(text,target_lang):
     return answer
 
 # Set OpenAI API key from Streamlit secrets
-client = OpenAI(st.secrets["API_KEY"])
+client = OpenAI(api_key=st.secrets["API_KEY"])
 
 # Set a default model
 if "openai_model" not in st.session_state:
