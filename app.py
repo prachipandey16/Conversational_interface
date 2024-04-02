@@ -4,7 +4,7 @@ from openai import OpenAI
 st.title("Seller ChatBox")
 
 def translate_text(text,target_lang):
-    client = OpenAI(api_key='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')
+    client = OpenAI(api_key='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')
     response = client.completions.create(
     model="gpt-3.5-turbo-instruct",
     prompt=f"Conver the following text into {target_lang} : {text}",
@@ -18,7 +18,7 @@ def translate_text(text,target_lang):
     return answer
 
 # Set OpenAI API key from Streamlit secrets
-client = OpenAI(api_key='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')
+client = OpenAI(api_key='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')
 
 # Set a default model
 if "openai_model" not in st.session_state:
